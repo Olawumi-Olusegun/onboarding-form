@@ -1,7 +1,7 @@
 
 import React from 'react'
-import StepForm from '@/components/multi-step-form/StepForm'
-import Steps from '@/components/multi-step-form/Steps'
+import StepForm from '@/components/multi-step-form/stepForms/StepForm'
+import Steps from '@/components/multi-step-form/stepForms/Steps'
 
 
 export default function StudentForm() {
