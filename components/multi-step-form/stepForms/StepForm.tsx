@@ -5,6 +5,7 @@ import EducationBackgroundForm from './EducationBackgroundForm';
 import ProgrammingExperienceForm from './ProgrammingExperienceForm';
 import PreferredProgramingLanguageForm from './PreferredProgramingLanguageForm';
 import TechnicalSkillsForm from './TechnicalSkillsForm';
+import FormConfirmation from './FormConfirmation';
 
 
 export default function StepForm() {
@@ -22,9 +23,11 @@ export default function StepForm() {
       return <PreferredProgramingLanguageForm />
     }else if (step === 5) {
       return <TechnicalSkillsForm />
+    }else if (step === 6) {
+      return <FormConfirmation />
     }
     else {
-      return null;
+      return <></>;
     }
   }
 
