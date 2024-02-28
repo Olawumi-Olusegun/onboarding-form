@@ -20,7 +20,15 @@ export default function PersonalInfoForm({}: Props) {
 
   return (
     <form onSubmit={handleSubmit(processData)} className='px-12 py-4'>
-      <div className="mb-8"></div>
+      <div className="mb-8">
+        <h5 className="text-xl md:text-3xl font-bold text-gray-900 dark:text-white">
+          Personal Info
+        </h5>
+        <p>
+          Please provide your name, email address and phone number
+        </p>
+      </div>
+      
     </form>
   )
 }
