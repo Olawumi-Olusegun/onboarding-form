@@ -1,20 +1,29 @@
 "use client";
 
+import { Input } from '@/components/ui/input';
 import React, { useState } from 'react'
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
-type Props = {}
+type Inputs = {
+  fullName: string;
+  email: string;
+}
 
-export default function PersonalInfoForm({}: Props) {
+
+export default function PersonalInfoForm() {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const { register, reset, watch, handleSubmit, formState: { errors } } = useForm({
-    defaultValues: {}
+  const { register, reset, watch, handleSubmit, formState: { errors } } = useForm<Inputs>({
+    defaultValues: {
+      fullName: "",
+      email:""
+    }
   });
 
 
-  async function processData(data: any) {
+
+  const processData: SubmitHandler<Inputs> = async (data) => {
     console.log(data)
   }
 
@@ -27,6 +36,23 @@ export default function PersonalInfoForm({}: Props) {
         <p>
           Please provide your name, email address and phone number
         </p>
+      </div>
+
+      <div className="grid gap-2 sm:grid-cols-2">
+        <Input 
+        label='Full Name'
+        {...register("fullName") }
+        // errors={errors}
+        />
+
+        <Input 
+        label='Email Address'
+        {...register("email") }
+        // errors={errors}
+        />
+
+
+
       </div>
       
     </form>
