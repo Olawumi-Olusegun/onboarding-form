@@ -7,6 +7,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 type Inputs = {
   fullName: string;
   email: string;
+  phoneNumber: string;
 }
 
 
@@ -17,7 +18,8 @@ export default function PersonalInfoForm() {
   const { register, reset, watch, handleSubmit, formState: { errors } } = useForm<Inputs>({
     defaultValues: {
       fullName: "",
-      email:""
+      email:"",
+      phoneNumber: ""
     }
   });
 
@@ -48,6 +50,11 @@ export default function PersonalInfoForm() {
         <Input 
         label='Email Address'
         {...register("email") }
+        // errors={errors}
+        />
+        <Input 
+        label='Phone Number'
+        {...register("phoneNumber") }
         // errors={errors}
         />
 
