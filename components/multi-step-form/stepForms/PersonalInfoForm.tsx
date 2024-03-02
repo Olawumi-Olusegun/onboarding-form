@@ -8,6 +8,7 @@ type Inputs = {
   fullName: string;
   email: string;
   phoneNumber: string;
+  billingAddress: string;
 }
 
 
@@ -19,7 +20,8 @@ export default function PersonalInfoForm() {
     defaultValues: {
       fullName: "",
       email:"",
-      phoneNumber: ""
+      phoneNumber: "",
+      billingAddress: "",
     }
   });
 
@@ -59,6 +61,11 @@ export default function PersonalInfoForm() {
         />
 
 
+        <TextInput
+          label="Billing Address"
+          name="billingAddress"
+          register={register}
+        />
 
       </div>
       
